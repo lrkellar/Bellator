@@ -1,0 +1,73 @@
+﻿Lance Kellar
+3696 S Leonard Springs • Bloomington, IN • 47403
+(812) 327-5967 • KellarLanceR@gmail.com
+Employment
+Granite Student Living                                                                        Bloomington, IN
+Operations Manager                                                                                                                  May 2023-Current
+* Analyzed existing local processes, identifying critical gaps and documenting 15+ new process SOPs and creating the first unified SOP guide for the operations manager role
+   * Programmed and ran a 3 month pilot of a Retrieval-Augmented generator Google Chatbot powered by Anthropic to engage employees with SOPs and the employee handbook approved by the CEO in partnership with the CRO.
+* Managed complex regulatory compliance, 50+ property owners, and independent contractors, leveraging market expertise and strategic relationship-building to mitigate potential fines and operational disruptions
+* Successfully brought 6 properties totaling 600 beds from violations into 100% compliance, including resolving a 10-year zoning violation and preventing $250,000 in potential fines
+* Negotiated and managed 30+ annual services contracts, 9+ subcontractor agreements for unit turns using a reverse Vickrey auction reducing prices 10%, and projects from $140,000 flood remediation projects to overnight subfloor replacement
+* Directed comprehensive project planning and stakeholder engagement across key groups - Investors, Property Owners, Corporate Leadership, Leasing, Maintenance, and Residents for $60 million of assets, reducing time to project completion by 15% by building dashboards and project management systems
+Leasing Coordinator and Operations                                                             Jan 2023 - May 2023
+* Acted as a multi-department liaison coordinating legal compliance, maintenance, leasing, and project management for 100+ properties totaling 1,200 beds.
+* Exceeded every weekly leasing goal
+* Successfully closed 6 month backlog of city compliance requirements.
+
+
+Regency Multifamily                                                                        Bloomington, IN
+Traveling Leasing Coordinator                                                                                         May 2021 - April 2022
+* Promoted to act as company wide backup with 90% travel reporting to Director of Leasing and Training
+* Temporarily filled vacancies from  Leasing Coordinators in Evansville IN to the Community Manager in Rochester MN 
+Leasing Coordinator                                                                                     Feb - Oct 2021
+* Developed strong sales and advertising capabilities
+* Achieved an exceptional tour closing percentage of over 70%, significantly exceeding the industry average of 54% through success oriented sales and building client/product matches
+* Contributed to achieving 100% property occupancy in record time, beating past records performance by 3 weeks through helping create an environment of friendly competition to be the best team player
+* Provided training and operational support for the newly promoted lead tech, maintaining 95% service order completion rate and keeping budget 1% under
+Maintenance Technician- Team Lead                                                     May 2018 – Feb 2021 
+* Promoted annually
+* Oversaw two entry technicians performance and training, leading to 3 new hires being promoted out, while resolving 98% of service requests in 1 business day.
+* Managed inventory for 306 apartment units and oversaw contractor performance, consistently optimizing resource allocation to stay 4% under budget
+* Lifetime EPA Certified HVAC technician
+
+
+KazCoal                                                                                           Bloomington, IN
+Founder                                                                                                                         Mar 2017 - April 2018
+* Licensed a biochar style technology to produce low emission engineered coal in Kazakhstan for export to China
+* Obtained support from the Kazakh government through tax benefits, partnerships and supplier arrangements, and infrastructure development
+* Negotiated IP licensing, state licensing, and leveraged network to connect with Sinopec to assist with sales 
+Indiana University                                                                                    Bloomington, IN
+Graduate Teaching assistant for V246: Introduction to public accounting                     Jan 2017 - May 2017
+* Managed attendance records and participation evaluations for 120 students
+* Hosted office hours and mentored students
+* Responsible for grading homework and exams
+
+
+Computer Clinic LBO                                                                               Bloomington, IN
+General Partner                                                                               Jan 2017 - Mar 2017
+* Negotiated terms for sale
+* Worked with management to create retention plans and a new service launch
+* Recruited limited partners
+* Secured bank financing with Old National
+* Created growth plan in partnership with management
+EDUCATION
+Indiana University                                                                                Bloomington, IN
+Master of Public Affairs (MPA)                                                                          May 2017
+    Concentrations: Public Finance Administration & International Development
+Bachelor of Arts (BA) in History & Political Science                                                  May 2014
+CONTINUING EDUCATION CERTIFICATES
+Certificate in Strategic Management                                                                  Mar 2020
+Certificate in HTML, CSS, and JavaScript for Web Developers                                           Sep 2020
+Certificate in Front-End Web UI Frameworks and Tools: Bootstrap 4                                   Oct 2020
+Certificate in Create Technical Stock Charts Using R and Quantmod                                  Dec 2020
+Certificate in Research Proposal: Initiating Research                                                             Jan 2021
+Certificate in SQL for Data Science                                                                   Jan 2021
+Certificate in Create a Python Application using PyMongo and MongoDB Database                  Mar 2021
+Certificate in Initiating and Planning Projects                                                          Nov 2021
+Certificate in Generate Synthetic Images with DCGANs in Keras                                          Feb 2022
+Certificate in Decentralized Finance (DeFi) Infrastructure                                         May 2022
+TECHNICAL SKILLS
+Github: https://github.com/lrkellar Projects: Image Captioning, Transcription and grading
+Python • HTML • SQL • Javascript • R/Rstudio • Ubuntu • Stata • SAS • AI: LLM, STT/TTS
+EXTRAS: Karate Black Belt and Eagle Scout
