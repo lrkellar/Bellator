@@ -39,10 +39,42 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Notification functions
+function showNotification(message, type = 'success') {
+    const notification = document.getElementById('notification');
+    const notificationMessage = document.getElementById('notification-message');
+    const notificationContent = notification.querySelector('.notification-content');
+    
+    notificationMessage.textContent = message;
+    notificationContent.className = `notification-content ${type}`;
+    notification.classList.add('show');
+}
+
+function hideNotification() {
+    const notification = document.getElementById('notification');
+    notification.classList.remove('show');
+}
+
+// Close notification when clicking the X or outside
+document.addEventListener('DOMContentLoaded', () => {
+    const notification = document.getElementById('notification');
+    const closeBtn = document.getElementById('notification-close');
+    
+    closeBtn.addEventListener('click', hideNotification);
+    
+    notification.addEventListener('click', (e) => {
+        if (e.target === notification) {
+            hideNotification();
+        }
+    });
+});
+
 // Contact form handling
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
         // Get form data
         const formData = new FormData(this);
         const name = formData.get('name');
@@ -52,34 +84,46 @@ if (contactForm) {
         
         // Simple validation
         if (!name || !email || !subject || !message) {
-            e.preventDefault();
-            alert('Please fill in all fields.');
+            showNotification('Please fill in all fields.', 'error');
             return;
         }
         
         // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            e.preventDefault();
-            alert('Please enter a valid email address.');
+            showNotification('Please enter a valid email address.', 'error');
             return;
         }
         
-        // If Formspree is available, let it handle the submission
-        // Otherwise, fall back to mailto
-        if (!this.action || this.action.includes('formspree')) {
-            // Let Formspree handle it - don't prevent default
-            return;
-        } else {
-            // Fallback to mailto
-            e.preventDefault();
-            const mailtoLink = `mailto:ritterstandalpha@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-                `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-            )}`;
+        // Show loading state
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        try {
+            // Submit to Formspree
+            const response = await fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
             
-            window.location.href = mailtoLink;
-            alert('Your email client will open with the message pre-filled. Please send the email to complete your inquiry.');
-            this.reset();
+            if (response.ok) {
+                showNotification('Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
+                this.reset();
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            showNotification('Sorry, there was an error sending your message. Please try again or contact us directly at ritterstandalpha@gmail.com.', 'error');
+        } finally {
+            // Reset button state
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
         }
     });
 }
