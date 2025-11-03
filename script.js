@@ -199,3 +199,61 @@ document.addEventListener('DOMContentLoaded', () => {
         statsObserver.observe(stat);
     });
 });
+
+// Active section detection
+function updateActiveNavigation() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    let currentSection = '';
+    const scrollPosition = window.scrollY + 100; // Offset for navbar height
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+    
+    // Update active nav link
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href');
+        if (href === `#${currentSection}`) {
+            link.classList.add('active');
+            
+            // Calculate position for background highlight
+            const linkRect = link.getBoundingClientRect();
+            const menuRect = navMenu.getBoundingClientRect();
+            const relativeLeft = linkRect.left - menuRect.left;
+            const linkWidth = linkRect.width;
+            
+            navMenu.classList.add('active-section');
+            navMenu.style.setProperty('--active-left', `${relativeLeft}px`);
+            navMenu.style.setProperty('--active-width', `${linkWidth}px`);
+        }
+    });
+    
+    // If no section is active, remove the background
+    if (!currentSection) {
+        navMenu.classList.remove('active-section');
+    }
+}
+
+// Throttled scroll handler for better performance
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+    if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+    }
+    scrollTimeout = setTimeout(updateActiveNavigation, 10);
+});
+
+// Initial call
+document.addEventListener('DOMContentLoaded', updateActiveNavigation);
+
+// Update on resize to recalculate positions
+window.addEventListener('resize', updateActiveNavigation);
