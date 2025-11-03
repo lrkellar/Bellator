@@ -43,8 +43,6 @@ window.addEventListener('scroll', () => {
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
         // Get form data
         const formData = new FormData(this);
         const name = formData.get('name');
@@ -54,6 +52,7 @@ if (contactForm) {
         
         // Simple validation
         if (!name || !email || !subject || !message) {
+            e.preventDefault();
             alert('Please fill in all fields.');
             return;
         }
@@ -61,13 +60,27 @@ if (contactForm) {
         // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
+            e.preventDefault();
             alert('Please enter a valid email address.');
             return;
         }
         
-        // Simulate form submission (replace with actual form handling)
-        alert('Thank you for your message! We will get back to you soon.');
-        this.reset();
+        // If Formspree is available, let it handle the submission
+        // Otherwise, fall back to mailto
+        if (!this.action || this.action.includes('formspree')) {
+            // Let Formspree handle it - don't prevent default
+            return;
+        } else {
+            // Fallback to mailto
+            e.preventDefault();
+            const mailtoLink = `mailto:ritterstandalpha@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+                `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+            )}`;
+            
+            window.location.href = mailtoLink;
+            alert('Your email client will open with the message pre-filled. Please send the email to complete your inquiry.');
+            this.reset();
+        }
     });
 }
 
