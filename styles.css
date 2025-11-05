@@ -394,6 +394,220 @@ section {
     line-height: 1.6;
 }
 
+/* Properties Section */
+.properties {
+    background: var(--white);
+}
+
+.properties-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.property-showcase {
+    background: var(--gray-50);
+    border-radius: 1.5rem;
+    padding: 3rem;
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.property-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.property-header h3 {
+    font-size: 2rem;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+}
+
+.property-address {
+    color: var(--gray-600);
+    font-size: 1.1rem;
+}
+
+.property-tabs {
+    background: var(--white);
+    border-radius: 1rem;
+    border: 1px solid var(--gray-200);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.tab-buttons {
+    display: flex;
+    background: var(--gray-100);
+}
+
+.tab-button {
+    flex: 1;
+    padding: 1rem 2rem;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tab-button.before {
+    color: #dc2626;
+}
+
+.tab-button.after {
+    color: var(--primary);
+}
+
+.tab-button.active {
+    background: var(--white);
+    transform: translateY(1px);
+}
+
+.tab-button.active.before {
+    background: rgba(239, 68, 68, 0.05);
+    border-bottom: 3px solid #dc2626;
+}
+
+.tab-button.active.after {
+    background: rgba(16, 185, 129, 0.05);
+    border-bottom: 3px solid var(--primary);
+}
+
+.tab-content {
+    padding: 2rem;
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.property-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-200);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.property-image.panorama {
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.property-image:hover {
+    transform: scale(1.02);
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Special layout for panoramic images */
+.image-gallery.panorama-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.image-gallery.panorama-layout .property-image {
+    height: 250px;
+    max-height: 40vh;
+}
+
+.improvements-summary {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.improvements-summary h4 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.improvements-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.improvements-list li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+}
+
+/* Image Modal */
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(4px);
+}
+
+.image-modal.show {
+    display: flex;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+}
+
+.modal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: -3rem;
+    right: 0;
+    background: var(--white);
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-700);
+}
+
 /* Management Section */
 .management {
     background: var(--gray-50);
@@ -687,6 +901,23 @@ section {
     
     .management-profile {
         padding: 2rem;
+    }
+    
+    .tab-buttons {
+        flex-direction: column;
+    }
+    
+    .tab-button {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .property-showcase {
+        padding: 2rem;
+    }
+    
+    .improvements-list {
+        grid-template-columns: 1fr;
     }
 }
 
